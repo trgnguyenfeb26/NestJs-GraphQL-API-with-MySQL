@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserInput {
+  name: String!
+  password: String!
+  username: String!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
+input LoginUserInput {
+  password: String!
+  username: String!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  createUser_test(createUserInput_test: CreateUserInput!): User!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+  removeUser(id: Int!): User!
+  removeUser_test(id: Int!): User!
+  signUp(createUserInput: CreateUserInput!): User!
+  updateUser(isAdmin: Boolean!, name: String!, password: String!, updateUserInput: UpdateUserInput!, username: String!): User!
+  updateUser_test(isAdmin: Boolean!, name: String!, password: String!, updateUserInput_test: UpdateUserInput!, username: String!): User!
+}
+
+type Query {
+  findAll: [User!]!
+  findAll_test: [User!]!
+  findOne(id: Int!): User!
+  findOne_test(id: Int!): User!
+}
+
+input UpdateUserInput {
+  id: Int!
+}
+
+type User {
+  id: Int!
+  isAdmin: Boolean!
+  name: String!
+  password: String!
+  username: String!
+}
